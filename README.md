@@ -1,4 +1,4 @@
-#laclassica
+#classiK
 
 Flux de treball complet:
 Cada cop que treballis en el projecte, segueix aquest procés:
