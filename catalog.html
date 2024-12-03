@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClàssiK - Catàleg</title>
   <link rel="stylesheet" href="style.css">
+  <script src="carret.js" defer></script>
 </head>
 <body>
 
@@ -23,23 +25,35 @@
   <!-- Catàleg -->
   <section class="catalog">
     <h2>Explora la nostra col·lecció</h2>
-    <div class="productes">
-      <div class="producte">
+    <div class="filters">
+      <button onclick="filterProducts('tasses')">Tasses</button>
+      <button onclick="filterProducts('samarretes')">Samarretes</button>
+      <button onclick="filterProducts('all')">Tots</button>
+    </div>
+    <div class="productes" id="product-list">
+      <div class="producte" data-category="tasses">
         <img src="https://via.placeholder.com/300" alt="Tassa 1">
         <h3>Tasses irreverents</h3>
         <p>Descobreix les nostres tasses amb dissenys únics.</p>
+        <button onclick="addToCart('Tassa 1')">Afegir al carret</button>
       </div>
-      <div class="producte">
+      <div class="producte" data-category="samarretes">
         <img src="https://via.placeholder.com/300" alt="Samarreta 1">
         <h3>Samarretes amb actitud</h3>
         <p>Per als qui volen destacar sense dir-ho.</p>
+        <button onclick="addToCart('Samarreta 1')">Afegir al carret</button>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    &copy; 2024 ClàssiK. Tots els drets reservats.
+    <p>&copy; 2024 ClàssiK. Tots els drets reservats.</p>
+    <div class="social-icons">
+      <a href="#"><img src="icon-facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="icon-twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="icon-instagram.png" alt="Instagram"></a>
+    </div>
   </footer>
 </body>
 </html>

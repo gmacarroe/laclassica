@@ -22,316 +22,44 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-/* General per centrar tot el contingut */
-section {
-  text-align: center;
-}
-
-/* Centrar els elements específics */
-.hero div,
-.valors,
-.productes,
-.testimonis,
-.contacte form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.productes {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.producte {
-  margin: 1rem;
-}
-
-/* Hero Section */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-              url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-}
-
-.hero h1 {
-  font-size: 3rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-.hero .cta {
-  padding: 1rem 2rem;
-  background-color: #e63946;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.hero .cta:hover {
-  background-color: #d62828;
-}
-
-/* Navbar */
-.navbar {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-}
-
-.navbar nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar nav ul li {
-  margin: 0 1rem;
-}
-
-.navbar nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s;
-  text-align: center;
-}
-
-.navbar nav ul li a:hover {
-  color: #e63946;
-}
-
-.navbar nav ul li a.active {
-  color: #e63946;
-  font-weight: bold;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .navbar nav ul {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .navbar nav ul li {
-    margin: 0.5rem;
-  }
-}
-
-/* Qui som */
-.qui-som {
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.qui-som h2 {
-  font-size: 2rem;
-}
-
-.qui-som p {
-  font-size: 1rem;
-}
-
-/* Valors */
-.valors {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 2rem 1rem;
-}
-
-.valors .valor {
-  max-width: 300px;
-  margin: 1rem;
-  text-align: center;
-}
-
-.valors h3 {
-  font-size: 1.5rem;
-}
-
-.valors p {
-  font-size: 1rem;
-}
-
-/* Catàleg */
-.catalog {
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.catalog h2 {
-  font-size: 2rem;
-}
-
-.productes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.producte {
-  max-width: 300px;
-  text-align: center;
-}
-
-.producte img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.producte h3 {
-  font-size: 1.3rem;
-}
-
-.producte p {
-  font-size: 1rem;
-}
-
-/* Testimonis */
-.testimonis {
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.testimonis h2 {
-  font-size: 2rem;
-}
-
-.testimoni {
-  margin-bottom: 1rem;
-}
-
-.testimoni p {
-  font-size: 1rem;
-  font-style: italic;
-}
-
-.testimoni span {
-  display: block;
-  font-size: 0.9rem;
-}
-
-/* Contacte */
-.contacte {
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.contacte h2 {
-  font-size: 2rem;
-}
-
-.contacte form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contacte input, .contacte textarea {
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  width: 100%;
-  max-width: 400px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.contacte button {
-  padding: 0.5rem 1rem;
-  background-color: #e63946;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.contacte button:hover {
-  background-color: #d62828;
-}
-
 /* Footer */
 footer {
-  padding: 1rem;
   text-align: center;
-  background: #222;
-  color: #aaa;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero .cta {
-    font-size: 0.9rem;
-    padding: 0.8rem 1.5rem;
-  }
-
-  .valors {
-    flex-direction: column;
-  }
-
-  .productes {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .catalog h2, .testimonis h2, .contacte h2 {
-    font-size: 1.8rem;
-  }
-
-  .testimoni p {
-    font-size: 0.9rem;
-  }
+footer .social-icons a {
+  margin: 0 0.5rem;
+  display: inline-block;
 }
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
+footer .social-icons img {
+  width: 24px;
+  height: 24px;
+}
 
-  .hero p {
-    font-size: 0.9rem;
-  }
+/* Rotació de testimonis */
+#testimonis-container {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
 
-  .hero .cta {
-    font-size: 0.8rem;
-    padding: 0.6rem 1rem;
-  }
+#testimonis-container p, #testimonis-container span {
+  position: absolute;
+  animation: slide 5s infinite;
+}
 
-  .valors, .productes {
-    padding: 1rem;
+@keyframes slide {
+  0%, 20% {
+    top: 100%;
   }
-
-  .valors .valor, .producte {
-    margin: 0.5rem 0;
+  40%, 60% {
+    top: 0;
   }
-
-  .contacte input, .contacte textarea {
-    width: 90%;
+  80%, 100% {
+    top: -100%;
   }
 }
