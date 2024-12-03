@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClàssiK - Contacte</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    // Inicialitza EmailJS amb la Public Key
-    emailjs.init("IKMe_2uHBc0gk0IjO"); // Substitueix per la teva Public Key
-  </script>
-  <script>
+    (function () {
+      // Inicialitza EmailJS amb la Public Key
+      emailjs.init({
+        publicKey: "IKMe_2uHBc0gk0IjO", // Substitueix per la teva Public Key
+      });
+    })();
+
     function sendEmail(event) {
       event.preventDefault();
 
