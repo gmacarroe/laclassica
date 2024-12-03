@@ -8,46 +8,46 @@
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function () {
-      // Inicialitza EmailJS amb el teu User ID
-      emailjs.init("IKMe_2uHBc0gk0IjO"); // Utilitza la teva Public Key
+      // Inicialitza EmailJS amb la Public Key
+      emailjs.init("IKMe_2uHBc0gk0IjO");
     })();
 
-    // Funció per enviar el correu
     function sendEmail(event) {
-  event.preventDefault();
+      event.preventDefault();
 
-  // Seleccionem el botó
-  const button = document.querySelector("button");
-  const originalText = button.innerText;
+      // Seleccionem el botó
+      const button = document.querySelector("button");
+      const originalText = button.innerText;
 
-  // Mostrem el text de càrrega
-  button.innerText = "Enviant...";
-  button.disabled = true; // Desactivem el botó mentre s'envia
+      // Mostrem el text de càrrega
+      button.innerText = "Enviant...";
+      button.disabled = true;
 
-  // Recollim les dades del formulari
-  const nom = document.querySelector('input[name="from_name"]').value;
-  const email = document.querySelector('input[name="reply_to"]').value;
-  const missatge = document.querySelector('textarea[name="message"]').value;
+      // Recollim les dades del formulari
+      const nom = document.querySelector('input[name="from_name"]').value;
+      const email = document.querySelector('input[name="reply_to"]').value;
+      const missatge = document.querySelector('textarea[name="message"]').value;
 
-  // Enviem el correu a través d'EmailJS
-  emailjs.send("service_classik-mail", "template_classik-mail", {
-    from_name: nom,
-    reply_to: email,
-    message: missatge,
-  }).then(
-    function (response) {
-      alert("Missatge enviat correctament! Gràcies pel teu contacte.");
-      document.querySelector("form").reset(); // Neteja el formulari
-      button.innerText = originalText; // Restaurem el text original
-      button.disabled = false; // Rehabilitem el botó
-    },
-    function (error) {
-      alert("Hi ha hagut un error en enviar el missatge. Torna-ho a provar.");
-      button.innerText = originalText; // Restaurem el text original
-      button.disabled = false; // Rehabilitem el botó
+      // Enviem el correu a través d'EmailJS
+      emailjs.send("service_classik-mail", "template_classik-mail", {
+        from_name: nom, // Nom de l'usuari
+        reply_to: email, // Correu de l'usuari per respondre
+        message: missatge, // Missatge introduït
+      }).then(
+        function (response) {
+          alert("Missatge enviat correctament! Gràcies pel teu contacte.");
+          document.querySelector("form").reset(); // Neteja el formulari
+          button.innerText = originalText; // Restaurem el text original
+          button.disabled = false; // Rehabilitem el botó
+        },
+        function (error) {
+          console.error("Error:", error); // Registre d'error
+          alert("Hi ha hagut un error en enviar el missatge. Torna-ho a provar.");
+          button.innerText = originalText; // Restaurem el text original
+          button.disabled = false; // Rehabilitem el botó
+        }
+      );
     }
-  );
-}
   </script>
 </head>
 <body>
