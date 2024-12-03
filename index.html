@@ -65,39 +65,60 @@
       <span>- Marc, Berga</span>
     </div>
     <div class="testimoni">
-      <p>"Els millors dissenys per expressar-me tal com sóc!"</p>
-      <span>- Júlia, Girona</span>
+      <p>"Perfecte per fer regals amb estil i humor irreverent."</p>
+      <span>- Laura, Girona</span>
     </div>
     <div class="testimoni">
-      <p>"No sabia que una tassa pogués tenir tanta actitud."</p>
-      <span>- Arnau, Barcelona</span>
+      <p>"No havia vist mai dissenys tan originals. Simplement genial!"</p>
+      <span>- Jordi, Barcelona</span>
     </div>
     <div class="testimoni">
-      <p>"Originalitat i qualitat en cada detall. Simplement genial!"</p>
-      <span>- Laia, Lleida</span>
+      <p>"M'encanta el toc català i alhora modern. És el meu favorit."</p>
+      <span>- Clara, Vic</span>
     </div>
     <div class="testimoni">
-      <p>"És la millor manera de portar la cultura catalana a casa."</p>
-      <span>- Oriol, Vic</span>
+      <p>"La qualitat dels productes supera totes les meves expectatives!"</p>
+      <span>- Andreu, Lleida</span>
     </div>
     <div class="testimoni">
-      <p>"Vaig comprar una samarreta i ara tothom me'n pregunta d'on és!"</p>
-      <span>- Pau, Tarragona</span>
+      <p>"Els meus amics no paren de preguntar on he comprat aquestes tasses."</p>
+      <span>- Mireia, Tarragona</span>
     </div>
     <div class="testimoni">
-      <p>"Cada peça té una història, i això ho fa especial."</p>
-      <span>- Carla, Figueres</span>
+      <p>"Un servei excel·lent i uns dissenys que marquen la diferència."</p>
+      <span>- Enric, Sabadell</span>
     </div>
     <div class="testimoni">
-      <p>"ClàssiK no és només merxandatge, és una manera de viure."</p>
-      <span>- Ferran, Manresa</span>
+      <p>"Tasses i samarretes que parlen per si soles. És tot el que necessitava."</p>
+      <span>- Sílvia, Manresa</span>
     </div>
     <div class="testimoni">
-      <p>"Ja tinc la col·lecció completa de tasses. Una obra d'art!"</p>
-      <span>- Núria, Reus</span>
+      <p>"Els regals ideals per sorprendre amb estil i actitud."</p>
+      <span>- Joan, Reus</span>
     </div>
-  </div>
+    <div class="testimoni">
+      <p>"Un projecte increïble amb un missatge potent. Molt fan!"</p>
+      <span>- Júlia, Blanes</span>
+    </div>
+    <div class="testimoni">
+      <p>"M'encanten els seus dissenys i la filosofia que transmeten."</p>
+      <span>- Arnau, Granollers</span>
+    </div>
+    <div class="testimoni">
+      <p>"Tasses que no només són útils, sinó també un statement."</p>
+      <span>- Marta, Olot</span>
+    </div>
+    <div class="testimoni">
+      <p>"Un petit detall amb molta personalitat. Recomanat 100%!"</p>
+      <span>- Pol, Vilanova i la Geltrú</span>
+    </div>
+    <div class="testimoni">
+      <p>"Cada cop que faig servir la meva tassa ClàssiK, em sento part d'alguna cosa especial."</p>
+      <span>- Núria, Figueres</span>
+    </div>
+</div>
 </section>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const testimonis = document.querySelectorAll("#testimonis-container .testimoni");
@@ -105,17 +126,14 @@
 
     function mostrarTestimoni() {
       testimonis.forEach((testimoni, i) => {
-        testimoni.classList.remove("active");
-        if (i === index) {
-          testimoni.classList.add("active");
-        }
+        testimoni.style.display = i === index ? "block" : "none";
       });
       index = (index + 1) % testimonis.length;
     }
 
-    // Mostra el primer testimoni i inicia la rotació
+    // Inicialitza el primer testimoni i programa el canvi
     mostrarTestimoni();
-    setInterval(mostrarTestimoni, 5000); // Canvia cada 5 segons
+    setInterval(mostrarTestimoni, 5000);
   });
 </script>
 
