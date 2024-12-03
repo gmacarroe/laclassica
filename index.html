@@ -52,14 +52,72 @@
     </div>
   </section>
 
-  <!-- Testimonis rotatius -->
-  <section class="testimonis">
-    <h2>Què diuen els nostres clients?</h2>
-    <div class="testimoni" id="testimonis-container">
+<!-- Testimonis rotatius -->
+<section class="testimonis">
+  <h2>Què diuen els nostres clients?</h2>
+  <div id="testimonis-container">
+    <div class="testimoni">
       <p>"Les tasses de ClàssiK són el toc perfecte per a qualsevol matí rebel!"</p>
       <span>- Marina, Terrassa</span>
     </div>
-  </section>
+    <div class="testimoni">
+      <p>"Un disseny únic i amb molta personalitat. Això és ClàssiK."</p>
+      <span>- Marc, Berga</span>
+    </div>
+    <div class="testimoni">
+      <p>"Els millors dissenys per expressar-me tal com sóc!"</p>
+      <span>- Júlia, Girona</span>
+    </div>
+    <div class="testimoni">
+      <p>"No sabia que una tassa pogués tenir tanta actitud."</p>
+      <span>- Arnau, Barcelona</span>
+    </div>
+    <div class="testimoni">
+      <p>"Originalitat i qualitat en cada detall. Simplement genial!"</p>
+      <span>- Laia, Lleida</span>
+    </div>
+    <div class="testimoni">
+      <p>"És la millor manera de portar la cultura catalana a casa."</p>
+      <span>- Oriol, Vic</span>
+    </div>
+    <div class="testimoni">
+      <p>"Vaig comprar una samarreta i ara tothom me'n pregunta d'on és!"</p>
+      <span>- Pau, Tarragona</span>
+    </div>
+    <div class="testimoni">
+      <p>"Cada peça té una història, i això ho fa especial."</p>
+      <span>- Carla, Figueres</span>
+    </div>
+    <div class="testimoni">
+      <p>"ClàssiK no és només merxandatge, és una manera de viure."</p>
+      <span>- Ferran, Manresa</span>
+    </div>
+    <div class="testimoni">
+      <p>"Ja tinc la col·lecció completa de tasses. Una obra d'art!"</p>
+      <span>- Núria, Reus</span>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const testimonis = document.querySelectorAll("#testimonis-container .testimoni");
+    let index = 0;
+
+    function mostrarTestimoni() {
+      testimonis.forEach((testimoni, i) => {
+        testimoni.classList.remove("active");
+        if (i === index) {
+          testimoni.classList.add("active");
+        }
+      });
+      index = (index + 1) % testimonis.length;
+    }
+
+    // Mostra el primer testimoni i inicia la rotació
+    mostrarTestimoni();
+    setInterval(mostrarTestimoni, 5000); // Canvia cada 5 segons
+  });
+</script>
 
   <!-- Footer -->
   <footer>
@@ -68,5 +126,26 @@
       <a href="https://www.instagram.com/classik.cat/?hl=es" target="_blank"><img src="images/instagram_white.png" alt="Instagram"></a>
     </div>
   </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const testimonis = document.querySelectorAll("#testimonis-container .testimoni");
+    let index = 0;
+
+    function mostrarTestimoni() {
+      testimonis.forEach((testimoni, i) => {
+        testimoni.classList.remove("active");
+        if (i === index) {
+          testimoni.classList.add("active");
+        }
+      });
+      index = (index + 1) % testimonis.length;
+    }
+
+    mostrarTestimoni();
+    setInterval(mostrarTestimoni, 5000);
+  });
+</script>
+
 </body>
 </html>

@@ -376,3 +376,64 @@ footer .social-icons img {
     top: -100%;
   }
 }
+
+/* Ajustos per a testimonis rotatius */
+#testimonis-container {
+  position: relative;
+  height: 150px; /* Ajusta la mida si cal */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#testimonis-container .testimoni {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#testimonis-container .testimoni.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes rotate-testimonis {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Testimonis */
+#testimonis-container {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+#testimonis-container .testimoni {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#testimonis-container .testimoni.active {
+  opacity: 1;
+  transform: translateY(0);
+}
