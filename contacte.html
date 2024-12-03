@@ -5,11 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClàssiK - Contacte</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      // Inicialitza EmailJS amb el teu User ID
+      emailjs.init("IKMe_2uHBc0gk0IjO"); // Utilitza la teva Public Key
+    })();
+
+    // Funció per enviar el correu
+    function sendEmail(event) {
+  event.preventDefault();
+
+  // Seleccionem el botó
+  const button = document.querySelector("button");
+  const originalText = button.innerText;
+
+  // Mostrem el text de càrrega
+  button.innerText = "Enviant...";
+  button.disabled = true; // Desactivem el botó mentre s'envia
+
+  // Recollim les dades del formulari
+  const nom = document.querySelector('input[name="from_name"]').value;
+  const email = document.querySelector('input[name="reply_to"]').value;
+  const missatge = document.querySelector('textarea[name="message"]').value;
+
+  // Enviem el correu a través d'EmailJS
+  emailjs.send("service_classik-mail", "template_classik-mail", {
+    from_name: nom,
+    reply_to: email,
+    message: missatge,
+  }).then(
+    function (response) {
+      alert("Missatge enviat correctament! Gràcies pel teu contacte.");
+      document.querySelector("form").reset(); // Neteja el formulari
+      button.innerText = originalText; // Restaurem el text original
+      button.disabled = false; // Rehabilitem el botó
+    },
+    function (error) {
+      alert("Hi ha hagut un error en enviar el missatge. Torna-ho a provar.");
+      button.innerText = originalText; // Restaurem el text original
+      button.disabled = false; // Rehabilitem el botó
+    }
+  );
+}
+  </script>
 </head>
 <body>
-
   <!-- Header -->
   <header class="navbar">
+    <h1>ClàssiK - Cultura irreverent</h1>
     <nav>
       <ul>
         <li><a href="index.html">Inici</a></li>
@@ -23,10 +67,10 @@
   <!-- Contacte -->
   <section class="contacte">
     <h2>Contacta amb nosaltres</h2>
-    <form>
-      <input type="text" name="nom" placeholder="El teu nom" required>
-      <input type="email" name="email" placeholder="El teu correu" required>
-      <textarea name="missatge" placeholder="El teu missatge" required></textarea>
+    <form onsubmit="sendEmail(event)">
+      <input type="text" name="from_name" placeholder="El teu nom" required>
+      <input type="email" name="reply_to" placeholder="El teu correu" required>
+      <textarea name="message" placeholder="El teu missatge" required></textarea>
       <button type="submit" class="cta">Envia</button>
     </form>
   </section>
