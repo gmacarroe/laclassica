@@ -24,7 +24,7 @@ h1, h2, h3 {
 
 /* General per centrar tot el contingut */
 section {
-  text-align: center; /* Centra el text dins les seccions */
+  text-align: center;
 }
 
 /* Centrar els elements específics */
@@ -34,32 +34,20 @@ section {
 .testimonis,
 .contacte form {
   display: flex;
-  flex-direction: column; /* Apilar elements verticalment */
-  align-items: center; /* Centrar horitzontalment */
-  justify-content: center; /* Opcional: Centrar verticalment si és necessari */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .productes {
-  flex-direction: row; /* Productes en fila horitzontal */
-  flex-wrap: wrap; /* Permetre que els elements saltin de línia si no hi ha espai */
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .producte {
   margin: 1rem;
 }
-
-/* Ajustar a pantalles petites de movils */
-@media (max-width: 768px) {
-  section {
-    padding: 1rem;
-  }
-
-  .navbar nav ul li {
-    margin: 0 0.5rem;
-  }
-}
-
 
 /* Hero Section */
 .hero {
@@ -106,14 +94,14 @@ section {
 
 .navbar nav ul {
   display: flex;
-  justify-content: center; /* Centrar els enllaços horitzontalment */
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .navbar nav ul li {
-  margin: 0 1rem; /* Espai entre els enllaços */
+  margin: 0 1rem;
 }
 
 .navbar nav ul li a {
@@ -121,24 +109,11 @@ section {
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s;
-  text-align: center; /* Centrar el text de cada enllaç */
+  text-align: center;
 }
 
 .navbar nav ul li a:hover {
-  color: #e63946; /* Color al passar el ratolí */
-}
-
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .navbar nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar nav ul li {
-    margin: 0.5rem 0;
-  }
+  color: #e63946;
 }
 
 .navbar nav ul li a.active {
@@ -146,6 +121,18 @@ section {
   font-weight: bold;
 }
 
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar nav ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .navbar nav ul li {
+    margin: 0.5rem;
+  }
+}
 
 /* Qui som */
 .qui-som {
