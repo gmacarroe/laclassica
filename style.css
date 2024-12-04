@@ -399,3 +399,25 @@ footer .social-icons img {
     opacity: 1;
   }
 }
+
+/* Estils específics per a les imatges del catàleg */
+.catalog-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px; /* Opcional: aspecte arrodonit */
+  margin-bottom: 10px; /* Opcional: espai entre la imatge i el text */
+  display: block; /* Assegura que no hi hagi conflictes amb altres elements */
+}
+
+/* Estils específics per a les imatges del catàleg */
+.producte img {
+  width: 60px; /* Amplada fixa */
+  height: 60px; /* Alçada fixa */
+  object-fit: cover; /* Evita que es deformin les imatges */
+  border-radius: 5px; /* Arrodoneix les cantonades */
+  margin-bottom: 10px; /* Espai entre la imatge i el text */
+  display: block; /* Assegura que les imatges siguin elements de bloc */
+  margin-left: auto; /* Centra la imatge horitzontalment */
+  margin-right: auto; /* Centra la imatge horitzontalment */
+}

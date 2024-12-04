@@ -31,15 +31,13 @@ $result = $conn->query($sql);
             <?php
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    // Si no hi ha una imatge definida, utilitza la imatge per defecte
-                    $image_url = !empty($row['image_url']) ? $row['image_url'] : 'images/default_image.png';
-                    
+                    $image_path = file_exists("images/" . $row['image_url']) ? "images/" . $row['image_url'] : "images/default_image.png";
                     echo "<div class='producte'>";
-                    echo "<img src='" . htmlspecialchars($image_url) . "' alt='" . htmlspecialchars($row['name']) . "'>";
-                    echo "<h3>" . htmlspecialchars($row['name']) . "</h3>";
-                    echo "<p>" . htmlspecialchars($row['description']) . "</p>";
-                    echo "<p><strong>Preu: </strong>" . htmlspecialchars($row['price']) . " €</p>";
-                    echo "<p><strong>Stock: </strong>" . htmlspecialchars($row['stock']) . " unitats</p>";
+                    echo "<img src='" . $image_path . "' alt='" . $row['name'] . "' class='catalog-image'>";
+                    echo "<h3>" . $row['name'] . "</h3>";
+                    echo "<p>" . $row['description'] . "</p>";
+                    echo "<p><strong>Preu: </strong>" . $row['price'] . " €</p>";
+                    echo "<p><strong>Stock: </strong>" . $row['stock'] . " unitats</p>";
                     echo "<button class='cta'>Afegeix al carret</button>";
                     echo "</div>";
                 }
