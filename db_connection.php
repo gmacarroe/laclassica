@@ -2,7 +2,7 @@
 // Paràmetres de connexió
 $servername = "localhost";
 $username = "root";
-$password = ""; // Introdueix la contrasenya si en tens
+$password = "root"; // Introdueix la contrasenya si en tens
 $dbname = "classik_db";
 
 // Crear connexió
