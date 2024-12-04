@@ -21,3 +21,12 @@ Si creus que algú més pot haver fet canvis al repositori remot, és bona idea 
 
 Fes un pull:
 git pull origin main
+
+
+BASE DE DADES:
+
+Inicia el servidor MySQL:
+brew services start mysql
+
+Per accedir a MySQL:
+mysql -u root
