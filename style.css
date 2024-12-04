@@ -362,16 +362,18 @@ footer .social-icons img {
 /* Contenidor per als testimonis */
 #testimonis-container {
   max-width: 600px;
-  margin: 1rem auto; /* Combina els marges duplicats */
+  margin: 1rem auto; 
   position: relative;
 }
 
-/* Amaga tots els testimonis per defecte */
+/* Testimonis amagats per defecte */
 #testimonis-container .testimoni {
   font-size: 1.2rem;
   line-height: 1.5;
   color: #333;
-  display: none; /* Evita que es mostrin per defecte */
+  display: none; /* No es mostra inicialment */
+  opacity: 0; /* Evita efectes de "parpelleig" */
+  transition: opacity 1s ease-in-out; /* Transició suau per l'opacitat */
 }
 
 #testimonis-container .testimoni span {
@@ -382,13 +384,13 @@ footer .social-icons img {
   font-style: italic;
 }
 
-/* Mostra el testimoni actiu amb animació */
+/* Mostra només el testimoni actiu */
 #testimonis-container .testimoni.active {
   display: block;
-  animation: fadeIn 1s ease-in-out;
+  opacity: 1; /* Mostra el testimoni amb opacitat completa */
 }
 
-/* Animació per a transicions */
+/* Animació de fade-in */
 @keyframes fadeIn {
   from {
     opacity: 0;
