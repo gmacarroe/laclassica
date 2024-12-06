@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->execute()) {
         echo "Usuari registrat correctament.";
         // Redirigeix a una pàgina de confirmació o al login
-        header("Location: login.html");
+        header("Location: login.php");
         exit;
     } else {
         echo "Error en registrar l'usuari. Torna-ho a intentar.";

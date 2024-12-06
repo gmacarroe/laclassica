@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $user['username'];
             echo "Benvingut, " . $user['username'];
             // Redirigeix a la pàgina principal o de perfil
-            header("Location: index.html");
+            header("Location: index.php");
             exit;
         } else {
             echo "Contrasenya incorrecta.";
