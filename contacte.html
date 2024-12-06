@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -32,25 +30,51 @@
       const email = document.querySelector('input[name="reply_to"]').value;
       const missatge = document.querySelector('textarea[name="message"]').value;
 
-      // Enviem el correu a través d'EmailJS
-      emailjs.send("service_classik-mail", "template_classik-mail", {
-        from_name: nom, // Nom de l'usuari
-        reply_to: email, // Correu de l'usuari per respondre
-        message: missatge, // Missatge introduït
-      }).then(
-        function (response) {
-          alert("Missatge enviat correctament! Gràcies pel teu contacte.");
-          document.querySelector("form").reset(); // Neteja el formulari
-          button.innerText = originalText; // Restaurem el text original
-          button.disabled = false; // Rehabilitem el botó
+      // Enviem les dades a través d'EmailJS
+      emailjs
+        .send("service_classik-mail", "template_classik-mail", {
+          from_name: nom, // Nom de l'usuari
+          reply_to: email, // Correu de l'usuari per respondre
+          message: missatge, // Missatge introduït
+        })
+        .then(
+          function (response) {
+            alert("Missatge enviat correctament! Gràcies pel teu contacte.");
+            saveToDatabase(nom, email); // Guarda les dades a la base de dades
+            document.querySelector("form").reset(); // Neteja el formulari
+            button.innerText = originalText; // Restaurem el text original
+            button.disabled = false; // Rehabilitem el botó
+          },
+          function (error) {
+            console.error("Error:", error); // Registre d'error
+            alert(
+              "Hi ha hagut un error en enviar el missatge. Torna-ho a provar."
+            );
+            button.innerText = originalText; // Restaurem el text original
+            button.disabled = false; // Rehabilitem el botó
+          }
+        );
+    }
+
+    // Funció per enviar les dades a la base de dades
+    function saveToDatabase(nom, email) {
+      // Crea una sol·licitud AJAX per enviar dades al servidor
+      fetch("save_client.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        function (error) {
-          console.error("Error:", error); // Registre d'error
-          alert("Hi ha hagut un error en enviar el missatge. Torna-ho a provar.");
-          button.innerText = originalText; // Restaurem el text original
-          button.disabled = false; // Rehabilitem el botó
-        }
-      );
+        body: `name=${encodeURIComponent(nom)}&email=${encodeURIComponent(
+          email
+        )}`,
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          console.log("Resposta del servidor:", data); // Mostra el resultat al navegador
+        })
+        .catch((error) => {
+          console.error("Error al guardar a la base de dades:", error);
+        });
     }
   </script>
 </head>
