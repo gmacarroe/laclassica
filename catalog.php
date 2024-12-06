@@ -1,11 +1,12 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 include 'db_connection.php';
 
 $sql = "SELECT * FROM products WHERE visibility = 1";
 $result = $conn->query($sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>

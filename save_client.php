@@ -1,6 +1,10 @@
 <?php
 include 'db_connection.php';
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Recuperar dades del formulari
 $name = $_POST['name'];
 $email = $_POST['email'];

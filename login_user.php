@@ -1,6 +1,9 @@
 <?php
-session_start();
 include 'db_connection.php';
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
@@ -8,39 +11,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validació bàsica
     if (empty($email) || empty($password)) {
-        echo "Tots els camps són obligatoris.";
+        echo "Error: Tots els camps són obligatoris.";
         exit;
     }
 
     // Comprova si l'usuari existeix
-    $query = "SELECT * FROM users WHERE email = ?";
+    $query = "SELECT id, username, password FROM users WHERE email = ?";
     $stmt = $conn->prepare($query);
+    if (!$stmt) {
+        echo "Error en preparar la consulta: " . $conn->error;
+        exit;
+    }
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows === 1) {
+    if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
 
         // Verifica la contrasenya
         if (password_verify($password, $user['password'])) {
-            // Guarda dades a la sessió
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            echo "Benvingut, " . $user['username'];
-            // Redirigeix a la pàgina principal o de perfil
-            header("Location: index.php");
+            header("Location: profile.php");
             exit;
         } else {
-            echo "Contrasenya incorrecta.";
+            echo "Error: Contrasenya incorrecta.";
+            exit;
         }
     } else {
-        echo "Usuari no registrat.";
+        echo "Error: Usuari no trobat.";
+        exit;
     }
-
-    $stmt->close();
-} else {
-    echo "Mètode de sol·licitud no permès.";
 }
 
 $conn->close();
