@@ -21,6 +21,7 @@ $result = $conn->query($sql);
                 <li><a href="qui_som.html">Qui som</a></li>
                 <li><a href="catalog.php" class="active">Catàleg</a></li>
                 <li><a href="contacte.html">Contacte</a></li>
+                <li><a href="registre.html">Registra't</a></li>
             </ul>
         </nav>
     </header>

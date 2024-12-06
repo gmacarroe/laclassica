@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClàssiK - Registre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="qui_som.html">Qui som</a></li>
+                <li><a href="catalog.php">Catàleg</a></li>
+                <li><a href="contacte.html">Contacte</a></li>
+                <li><a href="registre.html" class="active">Registra't</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Registre -->
+    <section class="registre">
+        <h2>Registra't</h2>
+        <form action="register_user.php" method="POST">
+            <input type="text" name="username" placeholder="Nom d'usuari" required>
+            <input type="email" name="email" placeholder="Correu electrònic" required>
+            <input type="password" name="password" placeholder="Contrasenya" required>
+            <button type="submit" class="cta">Registra't</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ClàssiK. Tots els drets reservats.</p>
+    </footer>
+</body>
+</html>

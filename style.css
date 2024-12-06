@@ -421,3 +421,59 @@ footer .social-icons img {
   margin-left: auto; /* Centra la imatge horitzontalment */
   margin-right: auto; /* Centra la imatge horitzontalment */
 }
+
+/* Estils per al formulari de registre */
+.registre {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.registre h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.registre form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.registre input {
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.registre button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.registre button:hover {
+  background-color: #d62828;
+}
+
+/* Ajustos responsius */
+@media (max-width: 768px) {
+  .registre form {
+    width: 90%;
+  }
+
+  .registre input {
+    max-width: 100%;
+  }
+}
